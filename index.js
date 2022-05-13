@@ -5,10 +5,10 @@ const cors = require('cors');
 
 
 let usuarios= [
-    { id: 0, nombre: "Juan"},
-    { id: 1, nombre: "Gaby"},
-    { id: 2, nombre: "Javier"},
-    { id: 3, nombre: "Lucía"}, 
+    // { id: 0, nombre: "Juan"},
+    // { id: 1, nombre: "Gaby"},
+    // { id: 2, nombre: "Javier"},
+    // { id: 3, nombre: "Lucía"}, 
 ];
 
 app.use(bodyParser.json());
@@ -37,7 +37,6 @@ app.get("/usuarios",(req, res) => {
 // QUERY PARAMS, RECIBE POR HTML EL PARÁMETRO DEL DATO DEL REGISTRO QUE SE REQUIERE MANDAR
 // app.get("/usuarios",(req, res) => {
 //     const idFront = req.query.id
-//     console.log("idFront: ", idFront)
 //     const filtro = usuarios.filter(user => user.id == idFront)
 //     res.send(filtro);
 // });
@@ -46,10 +45,8 @@ app.get("/usuarios",(req, res) => {
 // CREAR REGISTROS
 app.post("/usuarios", (req, res) => {
     const { nombre } = req.body;
-    console.log("Nombre: ", nombre);
     const id = usuarios.length;
     usuarios.push({id, nombre});
-    console.log(usuarios);
     res.json(usuarios);
 })
 
